@@ -1,0 +1,88 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+.catalog-product-index {
+    .data-grid {
+        .admin__field-tooltip {
+            position: static;
+        }
+
+        .admin__field-tooltip-content {
+            bottom: auto;
+            margin-top: 16px;
+            right: auto;
+            z-index: 3;
+
+            &:after,
+            &:before {
+                .lib-arrow(
+                @_position: up,
+                @_size: 16px,
+                @_color: @field-tooltip-content__border-color
+                );
+                left: 16px;
+                right: inherit;
+                top: -32px;
+            }
+
+            &:after {
+                border-bottom-color: @field-tooltip-content__background-color;
+                margin: 1px 0 0;
+            }
+
+            .table-qty-details {
+                th {
+                    font-weight: @font-weight__bold;
+                }
+
+                th,
+                td {
+                    background: transparent;
+                    border: 0;
+                    color: @text__color;
+                    padding: 2px @indent__s 0 0;
+                }
+            }
+
+            .low-stock {
+                .lib-icon-font(
+                @icon-warning__content,
+                @_icon-font: @icons-admin__font-name,
+                @_icon-font-size: 1.9rem,
+                @_icon-font-line-height: @icon-font__line-height,
+                @_icon-font-color: @color-phoenix,
+                @_icon-font-text-hide: true
+                );
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    top: -17px;
+                }
+            }
+        }
+    }
+}
+
+.admin__field-tooltip {
+    .admin__field-tooltip-inventory& {
+        margin-top: 0;
+        white-space: nowrap;
+
+        .admin__field-tooltip-action {
+            margin: 0;
+        }
+    }
+
+    .admin__field-tooltip-warning& {
+        .admin__field-tooltip-action {
+            &:before {
+                color: @color-phoenix;
+                content: @icon-warning__content;
+                margin-top: -@indent__xs;
+            }
+        }
+    }
+}
