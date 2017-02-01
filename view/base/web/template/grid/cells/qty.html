@@ -1,0 +1,15 @@
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!-- k o i f: ($col.isQtyDetailsAvailable($row()))-->
+    <div data-bind="css: {'admin__field-tooltip admin__field-tooltip-inventory': true, 'admin__field-tooltip-warning': false}">
+        <span text="$col.getLabel($row())"/>
+        <span class="admin__field-tooltip-action action-help"/>
+        <div class="admin__field-tooltip-content" html="$col.getTooltipHtml($row())"/>
+    </div>
+<!-- / k o -->
+
+
